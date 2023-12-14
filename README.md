@@ -13,18 +13,11 @@ The Cover Letter Generator is a user-friendly application designed to simplify t
 - **Professional Formatting:** Ensure your cover letters are polished and formatted to impress potential employers.
 - **Efficiency:** Submit multiple applications with ease, increasing your chances of getting noticed.
 
-## Getting Started
-
-1. Clone this repository to your local machine.
-2. Install the required dependencies using `pip install -r requirements.txt`.
-3. Run the application with `python app.py`.
-4. Access the Cover Letter Generator through your web browser.
-
 ## Usage
 
-1. Input your details into the user-friendly interface.
-2. Click the generate button and watch your tailored cover letter appear.
-3. Copy the generated text and paste it into your job application.
+1. Visit our website: https://datapalooza-cover-letters.streamlit.app/
+2. Input your details into the user-friendly interface.
+3. Click the generate button and watch your tailored cover letter appear.
 
 ## Feedback and Contributions
 
