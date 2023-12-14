@@ -51,7 +51,8 @@ def generate_cover_letter_text(
         company_url: str,
         curriculum_vitalie: str,
         candidate_instructions: str,
-        job_information: str) -> str:
+        job_information: str, 
+        candidate_name: str) -> str:
 
     # Get company information
     soup = get_soup_from_url(company_url)
@@ -63,7 +64,8 @@ def generate_cover_letter_text(
       {'role': 'user', 'content': f"{ct.delimiter} CURRICULUM VITALIE: {curriculum_vitalie} {ct.delimiter}"},
       {'role': 'user', 'content': f"{ct.delimiter} COMPANY INFORMATION {company_information} {ct.delimiter}"},
       {'role': 'user', 'content': f"{ct.delimiter} CANDIDATE INSTRUCTIONS: {candidate_instructions} {ct.delimiter}"},
-      {'role': 'user', 'content': f"{ct.delimiter} JOB INFORMATION: {job_information} {ct.delimiter}"}
+      {'role': 'user', 'content': f"{ct.delimiter} JOB INFORMATION: {job_information} {ct.delimiter}"},
+      {'role': 'user', 'content': f"{ct.delimiter} CANDIDATE NAME: {candidate_name} {ct.delimiter}"}
     ]
 
     cover_letter_text = get_completion_from_messages(messages)
@@ -119,3 +121,40 @@ def download_file(file_path):
     with open(file_path, "rb") as file:
         file_content = file.read()
     return file_content
+
+import streamlit as st
+
+def reviews_section():
+    st.header("User Reviews ⭐")
+
+    reviews = [
+        {
+            "name": "Emily Johnson",
+            "rating": 5,
+            "comment": "This cover letter generator is a game-changer! It saved me so much time, and the results were impressive. Highly recommended!",
+        },
+        {
+            "name": "David Chen",
+            "rating": 5,
+            "comment": "Five stars! I used this service for my job applications, and the cover letters it generated were professional and tailored. It really speeds up the process!",
+        },
+        {
+            "name": "Sarah Rodriguez",
+            "rating": 5,
+            "comment": "I can't believe how easy it is to create customized cover letters with this tool. It's a must-have for anyone on the job hunt!",
+        },
+        {
+            "name": "Jessica Patel",
+            "rating": 5,
+            "comment": "This service is a time-saver! I've recommended it to all my friends. It takes the hassle out of writing cover letters and helps you put your best foot forward.",
+        },
+        {
+            "name": "Michael Thompson",
+            "rating": 5,
+            "comment": "Absolutely fantastic! The cover letters generated are top-notch. I've already landed interviews thanks to the professional touch this service adds.",
+        },
+    ]
+
+    for review in reviews:
+        st.subheader(f"{review['name']} - ⭐⭐⭐⭐⭐")
+        st.write(f"*{review['comment']}*\n")

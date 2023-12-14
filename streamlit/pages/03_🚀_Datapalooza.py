@@ -51,7 +51,7 @@ with col1:
 with col2:
     st.markdown("### [:incoming_envelope: Email](mailto:info@datapalooza.co)")
     # st.image('images/kaggle.png', width=125)
-    st.write("Do you have questions or a special inquery? Write us to **info@datapalooza.co**")
+    st.write("Do you have questions or a special inquery? Write us to **esteban.cepeda@datapalooza.co**")
 
 st.markdown("### ➡️ Visit our Website: [🚀 Datapalooza](https://datapalooza.co)")
 st.markdown("### ➡️ Visit Chain Breaker 🔗 Website: [here](https://chainbreaker.datapalooza.co/)")
