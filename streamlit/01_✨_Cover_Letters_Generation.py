@@ -102,14 +102,18 @@ if st.button("Execute"):
 
         # Download button
         file_content = utils.download_file(ct.RESULTS_PATH)
-        st.download_button(
-            label="Click to download",
-            data=file_content,
-            file_name="cover_letters.docx",
-            key="download_button")
 
-        # Delete cover letter from local system.
-        os.remove(ct.RESULTS_PATH)
+        try:
+            st.download_button(
+                label="Click to download",
+                data=file_content,
+                file_name="cover_letters.docx",
+                key="download_button")
+    
+            # Delete cover letter from local system.
+            os.remove(ct.RESULTS_PATH)
+        except: 
+            st.warning("⚠️ Error downloading the file. Please try again or reload this app.")
 
 # Feedback section
 #st.title("Feedback 💬")
